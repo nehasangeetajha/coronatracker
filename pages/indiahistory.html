@@ -2,47 +2,38 @@
 <html>
 <head>
 <script>
-window.onload = function() {
-
-var dataPoints = [];
+window.onload = function () {
+	var dataPoints = [];
 
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	theme: "light2",
-	title: {
-		text: "World Stats"
-    },
-    axisX: {
-        title: "Countries"
-    },
-	axisY: {
-		title: "Cases",
-		titleFontSize: 24
-    },
-    
-	data: [{
-		type: "column",
-		yValueFormatString: "#,### Cases",
+	title:{
+		text: "Covid-19 cases in India"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{        
+		type: "line",
+      	indexLabelFontSize: 16,
 		dataPoints: dataPoints
 	}]
 });
 
 function addData(data) {
-    console.log(data)
-	for (var i = 0; i < data.length; i++) {
-        if(data[i].cases>10000)
-        {
-            dataPoints.push({
-			label: data[i].country,
-            y: data[i].cases
+    //console.log(data.data.statewise)
+	for (var i = 0; i < 35; i++) {
+		dataPoints.push({
+			label: data.data[i].day,
+            y: data.data[i].summary.total
 		});
-        }
 	}
 	chart.render();
 
 }
 
-$.getJSON("https://corona.lmao.ninja/countries?sort=country", addData);
+$.getJSON("https://api.rootnet.in/covid19-in/stats/history", addData);
 
 }
 </script>
