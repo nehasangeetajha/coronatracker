@@ -1,4 +1,4 @@
-fetch('https://corona.lmao.ninja/countries/India').then(res=>res.json()).then(data=>{
+fetch('https://corona.lmao.ninja/v2/countries/India').then(res=>res.json()).then(data=>{
             console.log(data)
             
 
