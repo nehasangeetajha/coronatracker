@@ -1,5 +1,5 @@
 fetch('https://corona.lmao.ninja/v2/countries/India').then(res=>res.json()).then(data=>{
-            console.log(data)
+            //console.log(data)
             
 
             document.getElementById('info').innerHTML+=`
@@ -27,7 +27,7 @@ fetch('https://corona.lmao.ninja/v2/countries/India').then(res=>res.json()).then
         })
 
 fetch('https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise').then(res=>res.json()).then(data=>{
-            console.log(data)
+            //console.log(data)
             data.data.statewise.map(obj=>{
                 document.getElementById('data').innerHTML += `
                     <tr>

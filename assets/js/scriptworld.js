@@ -1,7 +1,7 @@
 // https://covid19-server.chrismichael.now.sh/api/v1/AllReports
 
 fetch('https://corona.lmao.ninja/v2/all').then(res=>res.json()).then(data=>{
-            console.log(data)
+            //console.log(data)
 
             document.getElementById('info').innerHTML+=`
 
@@ -29,7 +29,7 @@ fetch('https://corona.lmao.ninja/v2/all').then(res=>res.json()).then(data=>{
         })
 
 fetch('https://corona.lmao.ninja/v2/countries?sort=country').then(res=>res.json()).then(data=>{
-            console.log(data)
+            //console.log(data)
 
             let todayDate = new Date();
         
